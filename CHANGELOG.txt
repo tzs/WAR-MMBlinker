@@ -1,0 +1,24 @@
+v1.0, initial release.
+
+MiniMap Blinker places a small icon of a green cross below the map filters
+button (you can move this from the layout editor if you wish). If you left
+click the icon, it will hide all the pips on the mini map except for the
+one for the NPC Healer and for you. These two pips will blink to make them
+easy to pick out against the background.
+
+Left Click the icon again to stop the blinking. It will stop on its own
+after 30 seconds. All pips the MiniMap Blinker hid will be restored.
+
+If you right click the icon, a list will pop up listing the categories of
+mini map pips, similar to the those in the map filter window. Left
+clicking on an item in this list will hide all pips except for the type
+and the one representing you, and will blink them, just as described above
+for the Healer pip. Left clicking on that item again while the blinking
+is in progress will stop it. Clicking on a different item will stop the
+blinking of the first and switch to the second.
+
+When the pop up listing is open, any click on the icon will stop the
+blinking and close the pop up. Right clicking will also close the
+pop up, but without stopping blinking that is in progress (you can
+always left click the icon to stop it, or wait for the 30 second
+auto stop)

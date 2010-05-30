@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+    <Scripts>
+        <Script file="MMBlinker.lua"/>
+    </Scripts>
+    <Windows>
+        <DynamicImage name="MMBlinker" handleinputs="true" texture="healicon" savesettings="true">
+            <Size>
+                <AbsPoint x="24" y="24"/>
+            </Size>
+            <TexCoords x="0" y="0"/>
+            <TexDims x="24" y="24"/>
+            <Anchors>
+                <Anchor point="bottom" relativePoint="top" relativeTo="EA_Window_OverheadMapFilterMenuButton">
+                    <AbsPoint x="" y="0"/>
+                </Anchor>
+            </Anchors>
+            <EventHandlers>
+                <EventHandler event="OnLButtonDown" function="MMBlinker.leftDownMain"/>
+                <EventHandler event="OnRButtonDown" function="MMBlinker.rightDownMain"/>
+            </EventHandlers>
+        </DynamicImage>
+        <Window name="MMBlinker_filters" inherits="EA_Window_Default" layer="background" movable="false" savesettings="false">
+            <Size>
+                <AbsPoint x="210" y="400"/>
+            </Size>
+            <Anchors>
+                <Anchor point="bottom" relativePoint="top" relativeTo="MMBlinker">
+                    <AbsPoint x="" y="-10"/>
+                </Anchor>
+            </Anchors>
+            <Windows>
+                <Window name="$parentBackground" inherits="EA_Window_DefaultBackgroundFrame" handleinput="true">
+                    <Anchors>
+                        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"/>
+                        <Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent"/>
+                    </Anchors>
+                </Window>
+                <Label name="$parentLabel1" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="top" relativePoint="top" relativeTo="$parent">
+                            <AbsPoint x="" y="15"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown1"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown1"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel2" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel1">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown2"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown2"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel3" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel2">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown3"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown3"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel4" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel3">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown4"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown4"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel5" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel4">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown5"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown5"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel6" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel5">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown6"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown6"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel7" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel6">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown7"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown7"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel8" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel7">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown8"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown8"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel9" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel8">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown9"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown9"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel10" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel9">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown10"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown10"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel11" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel10">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown11"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown11"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel12" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel11">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown12"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown12"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel13" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel12">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown13"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown13"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel14" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel13">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown14"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown14"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel15" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel14">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown15"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown15"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel16" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel15">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown16"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown16"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel17" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel16">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown17"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown17"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel18" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel17">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown18"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown18"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel19" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel18">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown19"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown19"/>
+                    </EventHandlers>
+                </Label>
+                <Label name="$parentLabel20" font="font_default_sub_heading" textalign="center">
+                    <Size>
+                        <AbsPoint x="210" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="bottom" relativePoint="top" relativeTo="$parentLabel19">
+                            <AbsPoint x="" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                    <EventHandlers>
+                        <EventHandler event="OnLButtonDown" function="MMBlinker.leftDown20"/>
+                        <EventHandler event="OnRButtonDown" function="MMBlinker.rightDown20"/>
+                    </EventHandlers>
+                </Label>
+            </Windows>
+        </Window>
+    </Windows>
+</Interface>
