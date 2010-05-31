@@ -1,3 +1,8 @@
+V1.1
+
+No user visible changes. Just internal code cleanup to make it a little
+more efficient.
+============================================================================
 v1.0, initial release.
 
 MiniMap Blinker places a small icon of a green cross below the map filters

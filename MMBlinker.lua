@@ -50,11 +50,17 @@ function MMBlinker.rightDownMain()
     end
 end
 
-function MMBlinker.leftDown(n)
+function MMBlinker.leftDownFilters(flags,x,y)
+    local scale = WindowGetScale("MMBlinker_filters")
+    if ( scale ~= 0 ) then
+        x = x / scale
+        y = y / scale
+    end
+    local n = math.floor((y-15)/30)+1
     MMBlinker.start(n)
 end
 
-function MMBlinker.rightDown(n)
+function MMBlinker.rightDownFilters()
     MMBlinker.rightDownMain()
 end
 
@@ -77,47 +83,6 @@ function MMBlinker.start(n)
     MMBlinker.autoStop = 30
     MMBlinker.blinkState(1)
 end
-
-function MMBlinker.leftDown1() MMBlinker.leftDown(1) end
-function MMBlinker.rightDown1() MMBlinker.rightDown(1) end
-function MMBlinker.leftDown2() MMBlinker.leftDown(2) end
-function MMBlinker.rightDown2() MMBlinker.rightDown(2) end
-function MMBlinker.leftDown3() MMBlinker.leftDown(3) end
-function MMBlinker.rightDown3() MMBlinker.rightDown(3) end
-function MMBlinker.leftDown4() MMBlinker.leftDown(4) end
-function MMBlinker.rightDown4() MMBlinker.rightDown(4) end
-function MMBlinker.leftDown5() MMBlinker.leftDown(5) end
-function MMBlinker.rightDown5() MMBlinker.rightDown(5) end
-function MMBlinker.leftDown6() MMBlinker.leftDown(6) end
-function MMBlinker.rightDown6() MMBlinker.rightDown(6) end
-function MMBlinker.leftDown7() MMBlinker.leftDown(7) end
-function MMBlinker.rightDown7() MMBlinker.rightDown(7) end
-function MMBlinker.leftDown8() MMBlinker.leftDown(8) end
-function MMBlinker.rightDown8() MMBlinker.rightDown(8) end
-function MMBlinker.leftDown9() MMBlinker.leftDown(9) end
-function MMBlinker.rightDown9() MMBlinker.rightDown(9) end
-function MMBlinker.leftDown10() MMBlinker.leftDown(10) end
-function MMBlinker.rightDown10() MMBlinker.rightDown(10) end
-function MMBlinker.leftDown11() MMBlinker.leftDown(11) end
-function MMBlinker.rightDown11() MMBlinker.rightDown(11) end
-function MMBlinker.leftDown12() MMBlinker.leftDown(12) end
-function MMBlinker.rightDown12() MMBlinker.rightDown(12) end
-function MMBlinker.leftDown13() MMBlinker.leftDown(13) end
-function MMBlinker.rightDown13() MMBlinker.rightDown(13) end
-function MMBlinker.leftDown14() MMBlinker.leftDown(14) end
-function MMBlinker.rightDown14() MMBlinker.rightDown(14) end
-function MMBlinker.leftDown15() MMBlinker.leftDown(15) end
-function MMBlinker.rightDown15() MMBlinker.rightDown(15) end
-function MMBlinker.leftDown16() MMBlinker.leftDown(16) end
-function MMBlinker.rightDown16() MMBlinker.rightDown(16) end
-function MMBlinker.leftDown17() MMBlinker.leftDown(17) end
-function MMBlinker.rightDown17() MMBlinker.rightDown(17) end
-function MMBlinker.leftDown18() MMBlinker.leftDown(18) end
-function MMBlinker.rightDown18() MMBlinker.rightDown(18) end
-function MMBlinker.leftDown19() MMBlinker.leftDown(19) end
-function MMBlinker.rightDown19() MMBlinker.rightDown(19) end
-function MMBlinker.leftDown20() MMBlinker.leftDown(20) end
-function MMBlinker.rightDown20() MMBlinker.rightDown(20) end
 
 function MMBlinker.repentHarlequin(elapsed)
     if ( MMBlinker.running == true )
