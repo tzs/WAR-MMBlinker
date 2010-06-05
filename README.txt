@@ -1,24 +1,3 @@
-V1.2
-
-Added two new items to the pop up listing of map pip categories:
-
-    "group" blinks the pips representing your group members.
-
-    "warband" blinks the pips representing people in your warband
-    who are not in your group.
-============================================================================
-V1.1.1
-
-No user visible changes. Just fixed issue with configuration for Curse that
-was causing the license file to be overwritten with an incorrect file.
-============================================================================
-V1.1
-
-No user visible changes. Just internal code cleanup to make it a little
-more efficient.
-============================================================================
-v1.0, initial release.
-
 MiniMap Blinker places a small icon of a green cross below the map filters
 button (you can move this from the layout editor if you wish). If you left
 click the icon, it will hide all the pips on the mini map except for the
@@ -36,8 +15,27 @@ for the Healer pip. Left clicking on that item again while the blinking
 is in progress will stop it. Clicking on a different item will stop the
 blinking of the first and switch to the second.
 
+The pop up list includes the same options that the map filter list
+includes, plus two extra items:
+
+    "group" blinks your group members, and
+
+    "warband" blinks those in your warband that are NOT in
+    your group.
+
 When the pop up listing is open, any click on the icon will stop the
 blinking and close the pop up. Right clicking will also close the
 pop up, but without stopping blinking that is in progress (you can
 always left click the icon to stop it, or wait for the 30 second
 auto stop)
+
+NOTE: if you find that you are often using the pop up to blink a
+particular item, you can make a macro to start and stop that item.
+First, find the number of the item in the drop down list. The first
+item is #1, the second is #2, and so on. Then make this macro:
+
+    /script MMBlinker.start(N)
+
+where N is the number of the item. Invoking that macro will start
+that item's pips blinking. Invoking it while the item is blinking
+will stop the blinking.

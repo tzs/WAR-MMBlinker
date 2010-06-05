@@ -15,6 +15,16 @@ function MMBlinker.initialize()
     WindowSetShowing("MMBlinker_filters", false)
     
     local n = 1
+    LabelSetText("MMBlinker_filtersLabel"..n, L"group");
+    MMBlinker.pinList[n] = {}
+    MMBlinker.pinList[n].pins = {}
+    MMBlinker.pinList[n].pins[1] = SystemData.MapPips.GROUP_MEMBER
+    n = n + 1
+    LabelSetText("MMBlinker_filtersLabel"..n, L"warband");
+    MMBlinker.pinList[n] = {}
+    MMBlinker.pinList[n].pins = {}
+    MMBlinker.pinList[n].pins[1] = SystemData.MapPips.WARBAND_MEMBER
+    n = n + 1
     for i, o in pairs(EA_Window_OverheadMap.mapPinFilters) do
         if ( n <= 20 ) then
             LabelSetText("MMBlinker_filtersLabel"..n, GetStringFromTable("MapPointFilterNames", o.label))
@@ -135,4 +145,11 @@ function MMBlinker.dp(...)
         end
     end
     d(out)
+end
+
+function MMBlinker.allon()
+    for index, type in pairs( SystemData.MapPips )
+    do
+        MapSetPinFilter("EA_Window_OverheadMapMapDisplay", type, true) 
+    end
 end
