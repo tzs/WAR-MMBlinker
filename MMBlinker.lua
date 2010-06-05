@@ -84,6 +84,7 @@ function MMBlinker.start(n)
     for index, type in pairs( SystemData.MapPips )
     do
         MapSetPinFilter("EA_Window_OverheadMapMapDisplay", type, false)
+        MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", type, false)
     end
     MMBlinker.pins = {SystemData.MapPips.HEALER_NPC}
     if ( n > 0 ) then
@@ -120,11 +121,14 @@ function MMBlinker.blinkState(n)
         for index, type in pairs( SystemData.MapPips )
         do
             MapSetPinFilter("EA_Window_OverheadMapMapDisplay", type, EA_Window_OverheadMap.Settings.mapPinFilters[type]) 
+            MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", type, EA_Window_WorldMap.Settings.mapPinFilters[type]) 
         end
     else
         MapSetPinFilter("EA_Window_OverheadMapMapDisplay", SystemData.MapPips.PLAYER, MMBlinker.blink[n][2])
+        MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", SystemData.MapPips.PLAYER, MMBlinker.blink[n][2])
         for i, f in pairs(MMBlinker.pins) do
             MapSetPinFilter("EA_Window_OverheadMapMapDisplay", f, MMBlinker.blink[n][1])
+            MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", f, MMBlinker.blink[n][1])
         end
         MMBlinker.flipTime = MMBlinker.blink[n][3]
         MMBlinker.currentState = n
@@ -151,5 +155,6 @@ function MMBlinker.allon()
     for index, type in pairs( SystemData.MapPips )
     do
         MapSetPinFilter("EA_Window_OverheadMapMapDisplay", type, true) 
+        MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", type, true) 
     end
 end

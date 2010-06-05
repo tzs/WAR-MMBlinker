@@ -39,3 +39,6 @@ item is #1, the second is #2, and so on. Then make this macro:
 where N is the number of the item. Invoking that macro will start
 that item's pips blinking. Invoking it while the item is blinking
 will stop the blinking.
+
+Although named "MiniMap Blinker", it actually also blinks the pips
+on the main map.
