@@ -8,6 +8,12 @@ function MMBlinker.initialize()
     }
     MMBlinker.filtersShowing = false
     MMBlinker.pinList = {}
+
+    MMBlinker.availableFilters = EA_Window_OverheadMap.mapPinFilters
+    MMBlinker.miniWindow = "EA_Window_OverheadMapMapDisplay"
+    MMBlinker.bigWindow = "EA_Window_WorldMapZoneViewMapDisplay"
+    MMBlinker.miniFilters = EA_Window_OverheadMap.Settings.mapPinFilters;
+    MMBlinker.bigFilters = EA_Window_WorldMap.Settings.mapPinFilters;
     
     CreateWindow("MMBlinker", true)
     WindowSetShowing("MMBlinker", true)
@@ -25,7 +31,7 @@ function MMBlinker.initialize()
     MMBlinker.pinList[n].pins = {}
     MMBlinker.pinList[n].pins[1] = SystemData.MapPips.WARBAND_MEMBER
     n = n + 1
-    for i, o in pairs(EA_Window_OverheadMap.mapPinFilters) do
+    for i, o in pairs(MMBlinker.availableFilters) do
         if ( n <= 20 ) then
             LabelSetText("MMBlinker_filtersLabel"..n, GetStringFromTable("MapPointFilterNames", o.label))
             MMBlinker.pinList[n] = o
@@ -83,8 +89,8 @@ function MMBlinker.start(n)
     end
     for index, type in pairs( SystemData.MapPips )
     do
-        MapSetPinFilter("EA_Window_OverheadMapMapDisplay", type, false)
-        MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", type, false)
+        MapSetPinFilter(MMBlinker.miniWindow, type, false)
+        MapSetPinFilter(MMBlinker.bigWindow, type, false)
     end
     MMBlinker.pins = {SystemData.MapPips.HEALER_NPC}
     if ( n > 0 ) then
@@ -120,15 +126,15 @@ function MMBlinker.blinkState(n)
         MMBlinker.running = false
         for index, type in pairs( SystemData.MapPips )
         do
-            MapSetPinFilter("EA_Window_OverheadMapMapDisplay", type, EA_Window_OverheadMap.Settings.mapPinFilters[type]) 
-            MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", type, EA_Window_WorldMap.Settings.mapPinFilters[type]) 
+            MapSetPinFilter(MMBlinker.miniWindow, type, MMBlinker.miniFilters[type]) 
+            MapSetPinFilter(MMBlinker.bigWindow, type, MMBlinker.bigFilters[type]) 
         end
     else
-        MapSetPinFilter("EA_Window_OverheadMapMapDisplay", SystemData.MapPips.PLAYER, MMBlinker.blink[n][2])
-        MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", SystemData.MapPips.PLAYER, MMBlinker.blink[n][2])
+        MapSetPinFilter(MMBlinker.miniWindow, SystemData.MapPips.PLAYER, MMBlinker.blink[n][2])
+        MapSetPinFilter(MMBlinker.bigWindow, SystemData.MapPips.PLAYER, MMBlinker.blink[n][2])
         for i, f in pairs(MMBlinker.pins) do
-            MapSetPinFilter("EA_Window_OverheadMapMapDisplay", f, MMBlinker.blink[n][1])
-            MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", f, MMBlinker.blink[n][1])
+            MapSetPinFilter(MMBlinker.miniWindow, f, MMBlinker.blink[n][1])
+            MapSetPinFilter(MMBlinker.bigWindow, f, MMBlinker.blink[n][1])
         end
         MMBlinker.flipTime = MMBlinker.blink[n][3]
         MMBlinker.currentState = n
@@ -154,7 +160,7 @@ end
 function MMBlinker.allon()
     for index, type in pairs( SystemData.MapPips )
     do
-        MapSetPinFilter("EA_Window_OverheadMapMapDisplay", type, true) 
-        MapSetPinFilter("EA_Window_WorldMapZoneViewMapDisplay", type, true) 
+        MapSetPinFilter(MMBlinker.miniWindow, type, true) 
+        MapSetPinFilter(MMBlinker.bigWindow, type, true) 
     end
 end
