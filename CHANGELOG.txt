@@ -1,3 +1,7 @@
+v1.4
+
+Looks for the map from the add-on Minmap and blinks the pips there now.
+============================================================================
 V1.3
 
 It now blinks the pips on the main map, too.

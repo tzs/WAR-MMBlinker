@@ -41,4 +41,6 @@ that item's pips blinking. Invoking it while the item is blinking
 will stop the blinking.
 
 Although named "MiniMap Blinker", it actually also blinks the pips
-on the main map.
+on the main map. It also looks for the add-on Minmap (a nice
+replacement for the built-in mini map) and will blink the pips
+on that map.
