@@ -1,3 +1,10 @@
+v1.5
+
+Better documentation. See the UsageGuide.png file that will be installed
+with the add-on for a state diagram explaining what happens when you left
+or right click in the icon or on list items. Slight code chance to make
+the behavior match the diagram.
+============================================================================
 v1.4
 
 Looks for the map from the add-on Minmap and blinks the pips there now.

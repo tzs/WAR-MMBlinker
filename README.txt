@@ -15,6 +15,9 @@ for the Healer pip. Left clicking on that item again while the blinking
 is in progress will stop it. Clicking on a different item will stop the
 blinking of the first and switch to the second.
 
+There's a diagram summarizing the above in the file UsageGuide.png,
+which is installed in the same directory as the add-on.
+
 The pop up list includes the same options that the map filter list
 includes, plus two extra items:
 

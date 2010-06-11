@@ -8,6 +8,7 @@ function MMBlinker.initialize()
     }
     MMBlinker.filtersShowing = false
     MMBlinker.pinList = {}
+    MMBlinker.defaultItem = 0
     
     MMBlinker.maps = {}
     MMBlinker.maps[1] = {}
@@ -39,6 +40,11 @@ function MMBlinker.initialize()
         if ( n <= 20 ) then
             LabelSetText("MMBlinker_filtersLabel"..n, GetStringFromTable("MapPointFilterNames", o.label))
             MMBlinker.pinList[n] = o
+            for i = 1, #o.pins do
+                if ( o.pins[i] == SystemData.MapPips.HEALER_NPC ) then
+                    MMBlinker.defaultItem = n
+                end
+            end
             n = n + 1
         end
     end
@@ -77,7 +83,7 @@ function MMBlinker.leftDownMain()
         MMBlinker.running = false
         MMBlinker.blinkState(0)
     else
-        MMBlinker.start(0)
+        MMBlinker.start(MMBlinker.defaultItem)
     end
 end
 
