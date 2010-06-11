@@ -1,3 +1,7 @@
+V1.5.1
+
+Oops. Wrong version of UsageGuide.png in v1.5.
+============================================================================
 v1.5
 
 Better documentation. See the UsageGuide.png file that will be installed
