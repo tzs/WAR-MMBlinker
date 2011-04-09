@@ -1,3 +1,8 @@
+v1.5.2
+
+Update game version to 1.4.1. No functionality changes. This is just to
+keep this add-on alive at Curse.
+============================================================================
 V1.5.1
 
 Oops. Wrong version of UsageGuide.png in v1.5.
